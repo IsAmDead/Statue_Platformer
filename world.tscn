@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bab6rmrrrnbmx"]
+
+[ext_resource type="PackedScene" uid="uid://c3m3ffom5fdx" path="res://tile_map.tscn" id="1_cpce8"]
+[ext_resource type="PackedScene" uid="uid://b3chxc50ks0v5" path="res://player.tscn" id="2_to1og"]
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_cpce8")]
+z_index = 1
+layer_0/tile_data = PackedInt32Array(196606, 65537, 2, 196607, 196609, 6, 131072, 196609, 6, 131073, 196609, 6, 131074, 196609, 6, 131075, 196609, 6, 131076, 196609, 6, 131077, 196609, 2, 262142, 65537, 0, 196613, 196609, 0, 262143, 65537, 6, 196608, 65537, 6, 196609, 65537, 6, 196610, 65537, 6, 196611, 65537, 6, 196612, 65537, 6, 65544, 65537, 0, 65550, 196609, 0, 65545, 65537, 6, 65546, 65537, 6, 65547, 65537, 6, 65548, 65537, 6, 65549, 65537, 6, 8, 65537, 2, 14, 196609, 2, 9, 196609, 6, 10, 196609, 6, 11, 196609, 6, 12, 196609, 6, 13, 196609, 6)
+
+[node name="Player" parent="." instance=ExtResource("2_to1og")]
+z_index = 1
+position = Vector2(113, 54)
+metadata/_edit_group_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+process_callback = 0
+position_smoothing_speed = 10.0
